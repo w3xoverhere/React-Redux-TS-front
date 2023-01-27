@@ -2,6 +2,7 @@
     "compilerOptions": {
       "outDir": "./dist/",
       "noImplicitAny": true,
+      "strictNullChecks": true,
       "sourceMap": true,
       "module": "es6",
       "target": "es5",
@@ -9,7 +10,7 @@
       "allowJs": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
-      "plugins": [{ "name": "typescript-plugin-css-modules" }],
+      "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
   "include": [
     "src"

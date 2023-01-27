@@ -1,19 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, 'src/index.tsx'),
+    entry: {
+        main: path.resolve(__dirname, 'src/index.tsx'),
+    },
     devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, "dist"),
         clean: true,
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: '/',
     },
     devServer: {
         static: './dist',
         compress: true,
         open: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -24,8 +30,15 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '/public/[name].[ext]'
+                }
+            }
         ],
     },
     resolve: {
@@ -34,6 +47,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html')
-        })
+        }),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
     ],
 };

@@ -25,12 +25,13 @@ figure,
 figcaption,
 blockquote,
 dl,
+#root,
 dd {
     margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
-body {
+body, #root {
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
