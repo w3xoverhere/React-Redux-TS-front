@@ -1,0 +1,28 @@
+
+@font-face {
+font-family: "RobotoMono-Italic";
+src: url("fonts/RobotoMono-Italic-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RobotoMono-VariableFont";
+    src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "PTSansNarrow-Bold";
+    src: url("fonts/PTSansNarrow-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "PTSansNarrow-Regular";
+    src: url("fonts/PTSansNarrow-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

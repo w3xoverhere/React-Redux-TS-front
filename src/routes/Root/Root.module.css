@@ -1,0 +1,21 @@
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.Header {
+    flex: 0 0 auto;
+}
+
+.Content {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    flex: 1 0 auto;
+    padding: 15px 0 0 10%;
+}
+
+.Footer {
+    flex: 0 0 auto;
+}
